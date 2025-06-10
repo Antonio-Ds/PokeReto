@@ -1,0 +1,189 @@
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #333333;
+    --border-color: #cccccc;
+    --placeholder-color: #eeeeee;
+    --placeholder-text-color: #999999;
+    --button-color: #4CAF50;
+    --button-hover-color: #45a049;
+    --input-border-color: #ddd;
+    --counter-color: #555555;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 20px;
+    position: relative;
+}
+
+.theme-switch-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#pokemonInput {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+#counters {
+    margin: 20px;
+    font-size: 18px;
+    color: var(--counter-color);
+}
+
+#pokemonList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.pokemon {
+    width: 100px;
+    height: 130px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.pokemon:hover {
+    transform: scale(1.05);
+}
+
+.pokemon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: var(--placeholder-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: var(--placeholder-text-color);
+    border-radius: 4px;
+}
+
+.dark-mode {
+    --background-color: #222222;
+    --text-color: #f5f5f5;
+    --border-color: #444444;
+    --placeholder-color: #555555;
+    --placeholder-text-color: #aaaaaa;
+    --button-color: #2E7D32;
+    --button-hover-color: #1B5E20;
+    --input-border-color: #555555;
+    --counter-color: #aaaaaa;
+}
+
+.dark-mode .pokemon {
+    background-color: #333333;
+}
+
+/* Animación para cuando un Pokémon es adivinado */
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+}
+
+.pokemon-correct {
+    animation: bounce 0.5s ease;
+}
