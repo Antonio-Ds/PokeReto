@@ -2,6 +2,8 @@
 
 ¡Bienvenido a "PokéReto"! Este es un juego interactivo donde puedes adivinar los nombres de los primeros 151 Pokémon. El juego ofrece diferentes modos de dificultad y un modo noche para una experiencia visual más cómoda.
 
+https://pokereto.pages.dev/
+
 ## Características
 
 - Tres modos de juego: Fácil, Medio y Difícil.
